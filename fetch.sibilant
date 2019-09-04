@@ -1,0 +1,31 @@
+;; Imports
+(var http (require 'http))
+
+;; Debug output
+(var DEBUG (or process.env.DEBUG false))
+(def log () (if DEBUG (apply console.log arguments)))
+
+(def fetch (url cb)
+  ;; Takes a URL and a callback function with signnature (results)
+  ;; Retrieves applicaion/json data from the URL with a HTTP GET
+  ;; and returns a JSON.parsed data structure
+
+  ;; TODO: handle errors gracefully, and return (err, data)
+  (http.get url
+            (# (res)
+               (var raw-data [])
+               (log "status" res.status-code)
+               (res.setEncoding 'utf8)
+               (res.on 'data (# (chunk) (raw-data.push chunk)))
+               (res.on 'end (#>
+                             (var data (raw-data.join "")
+                                  parsed-data null)
+                             (try
+                               (do
+                                 (assign parsed-data (JSON.parse raw-data))
+                                 (log "fetch parsed" (length raw-data) "data chunks")
+                               (console.log "Error" e)))
+                             (cb parsed-data))))))
+
+;; Exports
+(assign module.exports fetch)

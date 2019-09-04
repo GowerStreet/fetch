@@ -1,0 +1,33 @@
+{
+  "name": "@gowerstreet/fetch",
+  "version": "1.0.0",
+  "description": "A simple convenience wrapper around Node.js's HTTP.get",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo TODO",
+    "compile": "npx sibilant --file fetch.sibilant >index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GowerStreet/fetch.git"
+  },
+  "keywords": [
+    "minimal",
+    "convenience",
+    "fetch",
+    "request",
+    "http",
+    "sibilant",
+    "sibilantjs"
+  ],
+  "author": "sleepyfox@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GowerStreet/fetch/issues"
+  },
+  "homepage": "https://github.com/GowerStreet/fetch#readme",
+  "devDependencies": {
+    "sibilant": "0.5.x",
+    "@gowerstreet/infintestimal": "1.x"
+  }
+}
