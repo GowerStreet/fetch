@@ -1,6 +1,6 @@
 {
   "name": "@gowerstreet/fetch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple convenience wrapper around Node.js's HTTP.get",
   "main": "index.js",
   "scripts": {
