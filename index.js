@@ -30,7 +30,7 @@ var fetch = (function fetch$(url, cb) {
           parsedData = null;
       (function() {
         try {
-          parsedData = JSON.parse(rawData);
+          parsedData = JSON.parse(data);
           log("fetch parsed", rawData.length, "data chunks");
           return console.log("Error", e);
         } catch (e) {

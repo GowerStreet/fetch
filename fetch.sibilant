@@ -22,7 +22,7 @@
                                   parsed-data null)
                              (try
                                (do
-                                 (assign parsed-data (JSON.parse raw-data))
+                                 (assign parsed-data (JSON.parse data))
                                  (log "fetch parsed" (length raw-data) "data chunks")
                                (console.log "Error" e)))
                              (cb parsed-data))))))
